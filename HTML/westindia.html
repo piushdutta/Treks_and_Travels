@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treks and Travel</title>
+    <link rel="icon" type="image/x-icon" href="../images/Logo.png">
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    font-family: Montserrat !important;
+}
+
+.south_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.south_header {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size:50px;
+    color: aliceblue;
+    margin-bottom: 0px;
+    z-index: 1000;
+}
+
+#si {
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 65px;
+    color: aliceblue;
+    font-size:100px;
+}
+
+.south_places {
+    background-color: #ffffff;
+    width: 90%;
+    margin-top:150px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.place {
+    margin-bottom: 20px;
+}
+
+.reg_beach {
+    font-weight: 600;
+    font-size: 30px;
+    color:darkkhaki;
+    text-align: center;
+}
+
+.reg_beach_matter {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reg_img {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+}
+
+.reg_img img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px #f1683a;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 60px;
+}
+
+.container .card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 215px;
+    background-color:blanchedalmond;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.container .card:hover {
+    height: 320px;
+}
+
+.container .card .image {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    top: -40%;
+    left: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .card .image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.container .card .content {
+    position: relative;
+    top: -140px;
+    padding: 10px 15px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    margin-top: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .container .card {
+        max-width: 250px;
+    }
+
+    .container .card .image {
+        max-width: 220px;
+    }
+    .south_places{
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .card {
+        max-width: 90%;
+        margin: 20px 0;
+    }
+    .south_places{
+        margin-top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    #si {
+        font-size: 50px;
+    }
+
+    #explore {
+        font-size: 28px;
+    }
+
+    .reg_beach {
+        font-size: 25px;
+    }
+
+    .reg_beach_matter {
+        font-size: 18px;
+    }
+
+    .container .card {
+        max-width: 250px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    .reg_img{
+    gap: 20px;
+    }
+    .south_places{
+        margin-top: -100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container .card {
+        max-width: 250px;
+        margin: 15px 0;
+    }
+
+    .container .card .image {
+        max-width: 200px;
+    }
+    .reg_img{
+    gap: 20px;
+    /* width:150px; */
+    }
+    .south_places{
+        margin-top: -150px;
+    }
+}
+@media (max-width: 320px) {
+            #si {
+                font-size: 40px;   
+                padding-bottom: 120px;
+            }
+            #explore {
+                font-size: 24px;
+            }
+
+            .reg_beach {
+                font-size: 25px;
+            }
+
+            .reg_beach_matter {
+                font-size: 18px;
+            }
+
+            .container .card {
+                max-width: 250px;
+                margin: 20px 0;
+                font-size: 14px;
+            }
+            .container .card .image {
+                margin-left: -10px;
+    }
+            .south_places {
+                margin-top: -200px;
+                /* margin-left: 52px; */
+            }
+        }
+video {
+    width: 100%;
+    height: auto;
+    z-index: -1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cover
+{
+    display: flex;
+    justify-content: center;
+}
+.booknow
+{   
+    width:180px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( circle 918px at 13.1% 25.5%,  rgba(249,107,107,1) 0%, rgba(247,231,172,1) 48.9%, rgba(173,247,172,1) 90% );
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.booknow:hover
+{
+    color: white;
+}
+.booknow::before{
+    position: absolute;
+    content: "";
+    width:300px;
+    height:100px;
+    background-image: linear-gradient( 109.6deg,  rgba(112,246,255,0.33) 11.2%, rgba(221,108,241,0.26) 42%, rgba(229,106,253,0.71) 71.5%, rgba(123,183,253,1) 100.2% );
+    left:-300px;
+    border-radius: 50px;
+    transition: all 1s;
+    z-index: -1;
+}
+.booknow:hover::before{
+    left:0;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div class="south_parent">
+        <div class="south_header">
+            <div class="south_heading">
+                <video id="myVideo" autoplay loop muted>
+                    <source src="../Videos/video.mp4" type="video/mp4">
+                </video>
+                <h2 id="explore">Explore</h2>
+                <h1 id="si">West India</h1>
+            </div>
+        </div>
+        <div class="south_places">
+            <div class="place">
+                <h1 class="reg_beach">WEST INDIA</h1>
+                <div class="reg_beach_matter">
+                    West India! West India comprises the states of Goa, Gujarat, and Maharashtra, and is a treasure trove of rich cultural heritage, stunning natural beauty, and vibrant cities.Western India houses a variety of flora and fauna as it is home to the largest desert in India, the Thar Desert and the coastal regions. This part is home to the most happening place in India, Goa.
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Somanath_Temple.jpg/350px-Somanath_Temple.jpg"/>
+                          </div>
+                          <div class = content>
+                            <h3>TEMPLES</h3>
+                            <p>West India is home to a rich cultural heritage, and its temples are a testament to its spiritual significance.</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://upload.wikimedia.org/wikipedia/commons/7/7d/Wildlife_at_Maasai_Mara_%28Lion%29.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>WILD LIFE</h3>
+                              <p>West India is home to a diverse range of wildlife, with over 40 mammal species and nearly 450 bird species.</p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://cdn.pixabay.com/photo/2016/11/14/03/26/cliff-1822484_640.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>ADVENTURES</h3>
+                              <p>West India offers a plethora of exciting adventure opportunities for thrill-seekers and nature lovers.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Unbelievable Beaches
+                </h1>
+                <div class="reg_beach_matter">
+                    West India is home to some of the most stunning and diverse beaches in the country. From the scenic shores of Maharashtra to the tropical paradises of Goa and Daman and Diu, there's a beach for every kind of traveler.
+                </div>
+                <div class="reg_img">
+                    <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_625,q_55,w_500/v1/clients/visitflorida/Hutchinson_Island_Ross_Witham_Beach_Ground_05_2023_NPI_Productions__908eaee7-5a19-49c7-9096-15757cecb184.jpg" alt="">
+                    <img src="https://staticbiassets.in/photo/102537357/10-most-beautiful-beaches-in-india.jpg?imgsize=1414292" alt="">
+
+            </div>
+
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Stunning Hill Stations
+                </h1>
+                <div class="reg_beach_matter">
+                    West India is home to some of the most beautiful and scenic hill stations in the country. From the misty mountains of Maharashtra to the lush green hills of Gujarat, there's a hill station for every kind of traveler.Here are some of the top hill stations in West India:Matheran, Lavasa, Wilson Hills.
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://dynamic.tourtravelworld.com/package-images/photo-big/dir_17/509604/295001.jpg"/>
+                          </div>
+                          <div class = content>
+                            <h3>Chorla Ghats</h3>
+                            <p>Chorla Ghats is a scenic hill station located at the intersection of the borders of the states of Goa, Karnataka.</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://images.herzindagi.info/image/2023/Nov/west-india-hill.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Wilson Hills</h3>
+                              <p>Wilson Hills is a hill station located in the Valsad district of Gujarat, India. It's a popular tourist .</p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://www.holidify.com/images/compressed/6091.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Ratanwadi</h3>
+                              <p>Ratanwadi is a village in Ahmednagar district, Maharashtra, India. It's a popular destination for trekking.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Powerfull Temples
+                </h1>
+                <div class="reg_beach_matter">
+                    West India, comprising the states of Maharashtra, Gujarat, and Goa, is home to a rich cultural heritage and a plethora of ancient temples that showcase the region's architectural, artistic, and spiritual grandeur. Here are some of the most notable temples in West India:
+                    Sun Temple (Modhera),
+                    Dwarkadhish Temple (Dwarka),
+                    Somnath Temple (Veraval),
+                    Aundha Nagnath Temple (Hingoli),
+                    Bhimashankar Temple (Pune),
+                    Grishneshwar Temple (Ellora),
+                    Trimbakeshwar Temple (Nashik)
+                </div>
+                <div class="reg_img">
+                    <img src="https://images.news18.com/ibnlive/uploads/2023/09/siddhivinayak-temple.jpg" alt="">
+                    <img src="https://cdn11.bigcommerce.com/s-x49po/images/stencil/1500x1500/products/92390/247876/1679126468096_konark-sun-temple--jagmohana-uma-krishnamoorthy__34329.1686997891.jpg?c=2&imbypass=on" alt="">
+
+                </div>
+            </div>
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Wild Wonders Await: West India's Untamed Beauty
+                </h1>
+                <div class="reg_beach_matter">
+                    West India, comprising the states of Maharashtra, Gujarat, and Goa, is home to a diverse range of wildlife, thanks to its varied landscape and climate. Here are some of the most fascinating aspects of wildlife in West India:
+                    Tadoba National Park (Maharashtra),
+                    Krishnagiri Upavan National Park (Maharashtra),
+                    Marine National Park (Gujarat),
+                    Gir National Park (Gujarat)
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://img.jagranjosh.com/imported/images/E/GK/lion-gir-national-park.jpg"/>
+                          </div>
+                          <div class = content>
+                            <h3>Gir National Park</h3>
+                            <p>Gir National Park, also known as Sasan Gir, is a forest national park, and wildlife sanctuary near Talala Gir in Gujarat, India.</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/15/d6c43c642e27ac80f19e7a7f06aba455_1000x1000.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Marine National Park</h3>
+                              <p>The Marine National Park is located in the Gulf of Kutch, in the Devbhumi Dwarka district of Gujarat, India.</p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://static.toiimg.com/thumb/31783427/Tadoba-Andhari-Tiger-Reserve.jpg?width=1200&height=900"/>
+                            </div>
+                            <div class = content>
+                              <h3>Tadoba National Park</h3>
+                              <p>Tadoba National Park, also known as Tadoba-Andhari ,located in the Chandrapur district of Maharashtra, India.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cover">
+            <a href="Booking_page.html"><div class="booknow">Book Your Trip</div></a>
+        </div>
+    </div>
+    
+</body>
+</html>

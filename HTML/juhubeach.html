@@ -1,0 +1,332 @@
+<html>
+    <head>
+        <title>Treks and Travel</title>
+        <link rel="icon" type="image/x-icon" href="../images/Logo.png">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background: url(https://media.istockphoto.com/id/2148779958/photo/abstract-blur-of-tropical-leaves-pattern-background-luxury-palm-leaf-design-with-shadow.webp?b=1&s=170667a&w=0&k=20&c=gB0It6BG2hLe-gNiV5GO6l_HO-EjjozVHk80FqRhhbo=);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: Montserrat !important;
+}
+        .title{
+   height: 100px;
+   width: 100%;
+   /* background-color: aqua; */
+   font-size: 32px;
+   font-weight: bold;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #632941;
+}
+.details{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    /* border: 1px solid black; */
+    margin-top: 10px;
+}
+.pic1{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+}
+.amount{
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+.amount h4 {
+    margin: 0;
+    font-weight: bold;
+}
+.amount p {
+    margin: 5px 0;
+}
+/* .info{
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    border: 1px solid black;
+} */
+.overview{
+    width: 100%;
+    height: 100px;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    color: #632941;
+    /* background: url("https://www.indiantempletour.com/wp-content/uploads/2022/08/background.png"); */
+}
+.matter{
+    width: 80%;
+    height: auto;
+    /* border: 1px solid green; */
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: url("https://www.indiantempletour.com/wp-content/uploads/2022/08/background.png"); */
+}
+.info {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    padding: 10px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .overview {
+        width: 100%;
+        /* font-size: 12px;  */
+        padding: 10px 0;
+        text-align: center; 
+    }
+    .matter {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px; 
+        overflow: hidden; 
+        text-align: justify;
+    }
+}
+@media (max-width: 480px) {
+    .overview {
+        /* font-size: 16px;  */
+        padding: 8px 0; 
+    }
+    .matter {
+        font-size: 12px;
+        padding: 8px; 
+    }
+}
+.fortable{
+    margin-top: 20px;
+    width: 100%;
+    /* border: 1px solid black; */
+    padding: 10px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tabletitle{
+    width: 100%;
+    height: 80px;
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    color: #632941;
+}
+.table-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+}
+.table-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7a003b;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.table th {
+    background-color: #f2f2f2;
+    color: #7a003b;
+}
+.table td {
+    color: #333;
+}
+.main2{
+    height: auto;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+ .main2head{
+    width:100%;
+    height: auto;
+    /* background-color: yellow; */
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    color: #632941;
+} 
+.cards{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items: center;
+    margin-top: 25px;
+}
+.c1{
+    height: 400px;
+    width: 350px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+} 
+.transport{
+    width: 100%;
+    height: 350px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border: 1px solid black; */
+}
+.about{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.cover
+{
+    display: flex;
+    justify-content: center;
+}
+.booknow
+{   
+    width:180px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( circle 918px at 13.1% 25.5%,  rgba(249,107,107,1) 0%, rgba(247,231,172,1) 48.9%, rgba(173,247,172,1) 90% );
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.booknow:hover
+{
+    color: white;
+}
+.booknow::before{
+    position: absolute;
+    content: "";
+    width:300px;
+    height:100px;
+    background-image: linear-gradient( 109.6deg,  rgba(112,246,255,0.33) 11.2%, rgba(221,108,241,0.26) 42%, rgba(229,106,253,0.71) 71.5%, rgba(123,183,253,1) 100.2% );
+    left:-300;
+    border-radius: 50px;
+    transition: all 1s;
+    z-index: -1;
+}
+.booknow:hover::before{
+    left:0;
+}
+a{
+    text-decoration: none;
+}
+      </style>
+    </head>
+    <body>
+        <div class="title">
+            JUHU BEACH
+        </div>
+        <div class="details">
+            <img class="pic1" src="https://t2.gstatic.com/licensed-image?q=tbn:ANd9GcSLQ28xROSDA0Qd-1QTtLZO5RqKzylopPRKmlrG1YN4h3QGYQNP4lLA6aVuWz_eau86"/>
+            <div class="amount">
+                <p><strong>Destination : </strong>Mumbai</p>
+                <p><strong>Tour Name : </strong>Mumbai Tour Package</p>
+                <p><strong>Tour Duration : </strong>03 Nights / 04 Days</p>
+                <p><strong>Tour Price : </strong>₹ 12,000/- Per Person (Min- 4 Person)</p>
+            </div>
+        </div>
+        <div class="info">
+            <div class="overview">OVERVIEW</div>
+            <div class="matter">
+                Day-1 : Check into your hotel and get settled.A charming café known for its relaxed ambiance and delicious food.Spend your afternoon enjoying the sun, sand, and sea. Try out local street food like pav bhaji, bhel puri, and vada pav from the beachside stalls.Lunch at Mahesh Lunch Home - A well-known spot for seafood lovers.Visit ISKCON Temple - A peaceful and spiritual experience, the temple is located close to Juhu Beach.Dinner at Estella - A beachfront restaurant offering a fine dining experience with a view of the Arabian Sea.<br/>
+                Day-2 : Start your day with a refreshing walk along the beach.Breakfast at Le Pain Quotidien - a European-style café with a variety of breakfast options.Visit Juhu Chowpatty - Enjoy the vibrant local scene, and try more street food.Visit the nearby Film City or take a guided Bollywood tour to see the sets and studios.Dinner at Olive Bar & Kitchen - A trendy restaurant known for its Mediterranean cuisine and chic atmosphere.<br/>
+                Day-3 : Start your day with a yoga session on Juhu Beach.Breakfast at Lotus Café, JW Marriott - Enjoy a lavish breakfast buffet at this renowned hotel.Visit to Bandra Fort - Explore the historic Bandra Fort and enjoy the views of the Bandra-Worli Sea Link.Lunch at Pali Village Café - A trendy café in Bandra offering a variety of dishes in a cozy setting.Shopping at Linking Road - Spend your last evening shopping at Linking Road, known for its fashion boutiques and street stalls.Dinner at Gadda Da Vida, Novotel - End your trip with a beachfront dinner at this chic restaurant offering stunning views of the Arabian Sea.
+            </div>
+        </div>
+        <div class="fortable">
+            <div class="tabletitle">MUMBAI TOUR PACKAGE</div>
+            <div class="table-container">
+                <table class="table">
+                    <tr>
+                        <th>Tour Name:</th>
+                        <td>Mumbai Tour Package</td>
+                    </tr>
+                    <tr>
+                        <th>Tour Duration:</th>
+                        <td>03 Nights / 04 Days</td>
+                    </tr>
+                    <tr>
+                        <th>Destinations Covered:</th>
+                        <td>Mumbai - Juhu Beach</td>
+                    </tr>
+                    <tr>
+                        <th>Tour Price:</th>
+                        <td>₹ 12,000/- Per Person (Min- 4 Person)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="main2">
+            <div class="main2head">IMAGE GALLERY</div>
+            <div class="cards"> 
+            <div class="c1">
+                <img class="transport" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Puri_Sea_Beach_viewed_from_the_light_house.jpg/1920px-Puri_Sea_Beach_viewed_from_the_light_house.jpg"/>
+                <!-- <div class="about">Havelock Island</div> -->
+            </div>
+            <div class="c1">
+                <img class="transport" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/At_Puri_beach_05.jpg/1920px-At_Puri_beach_05.jpg"/>
+                <!-- <div class="about">Pingong Lake</div> -->
+            </div>
+            <div class="c1">
+                <img class="transport" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Puri_Sea_Beach%2C_Odisha.jpg/1280px-Puri_Sea_Beach%2C_Odisha.jpg"/>
+                <!-- <div class="about">Leh Old City</div> -->
+            </div>
+            </div>
+        </div>
+        <div class="cover">
+            <a href="Booking_page.html"><div class="booknow">Book Your Trip</div></a>
+        </div>
+    </body>
+</html>

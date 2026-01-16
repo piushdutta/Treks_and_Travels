@@ -1,0 +1,206 @@
+.south_parent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+*{
+    font-family: Poppins, sans-serif !important;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(195, 185, 185, 0.645);
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    object-fit: cover;
+    z-index:-100;
+  }
+
+
+.south_header{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#explore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Satisfy, cursive;
+    font-weight: 400;
+    size: 33px;
+    color: aliceblue;
+    margin-bottom: 0px;
+}
+#si{
+    margin-top: 0px;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 65px;
+    text-align: center;
+    color: aliceblue;
+}
+.south_places{
+    background-color: white;
+    width: 90%;
+    background-image: url('../images/backgrounde.png');
+    margin-top: -50px;
+    backdrop-filter: brightness(100%);
+    padding: 20px;
+}
+#reg_beach{
+    font-size: 50px;
+    text-align: center;
+    color: darkgoldenrod;
+}
+.reg_beach{
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 50px;
+    color: darkgoldenrod;
+    text-align: center;
+}
+.reg_beach_matter{
+    font-family: monospace;
+    font-weight: 400;
+    font-size: 20px;
+    
+    padding: 20px;
+}
+.reg_img{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+}
+.reg_img img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 1px 4px #f1683a;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 60px;
+}
+
+.container .card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 215px;
+    background-color: #fff;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.container .card:hover {
+    height: 320px;
+}
+
+.container .card .image {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    top: -40%;
+    left: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .card .image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.container .card .content {
+    position: relative;
+    top: -140px;
+    padding: 10px 15px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    margin-top: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.cover
+{
+    display: flex;
+    justify-content: center;
+}
+.booknow
+{   
+    width:180px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgoldenrod;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.me{
+    text-decoration: none;
+  }
+.booknow:hover
+{
+    color: white;
+}
+.booknow::before{
+    position: absolute;
+    content: "";
+    width:300px;
+    height:100px;
+    background-color: rgb(168, 140, 70);
+    left:-300px;
+    border-radius: 50px;
+    transition: all 1s;
+    z-index: -1;
+}
+.booknow:hover::before{
+    left:0;
+}
+
+
+
+

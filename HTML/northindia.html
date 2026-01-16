@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treks and Travel</title>
+    <link rel="icon" type="image/x-icon" href="../images/Logo.png">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    font-family: Montserrat !important;
+}
+
+.south_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.south_header {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#explore {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size:50px;
+    color: aliceblue;
+    margin-bottom: 0px;
+    z-index: 1000;
+}
+
+#si {
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 65px;
+    color: aliceblue;
+    font-size:100px;
+}
+
+.south_places {
+    background-color: #ffffff;
+    width: 90%;
+    margin-top:150px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.place {
+    margin-bottom: 20px;
+}
+
+.reg_beach {
+    font-weight: 600;
+    font-size: 30px;
+    color:darkkhaki;
+    text-align: center;
+}
+
+.reg_beach_matter {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.reg_img {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+}
+
+.reg_img img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px #f1683a;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    gap: 60px;
+}
+
+.container .card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 215px;
+    background-color:blanchedalmond;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.container .card:hover {
+    height: 320px;
+}
+
+.container .card .image {
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    top: -40%;
+    left: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.container .card .image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.container .card .content {
+    position: relative;
+    top: -140px;
+    padding: 10px 15px;
+    color: #111;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+    margin-top: 30px;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .container .card {
+        max-width: 250px;
+    }
+
+    .container .card .image {
+        max-width: 220px;
+    }
+    .south_places{
+        margin-top: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container .card {
+        max-width: 90%;
+        margin: 20px 0;
+    }
+    .south_places{
+        margin-top: -80px;
+    }
+}
+
+@media (max-width: 768px) {
+    #si {
+        font-size: 50px;
+    }
+
+    #explore {
+        font-size: 28px;
+    }
+
+    .reg_beach {
+        font-size: 25px;
+    }
+
+    .reg_beach_matter {
+        font-size: 18px;
+    }
+
+    .container .card {
+        max-width: 250px;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+    .reg_img{
+    gap: 20px;
+    }
+    .south_places{
+        margin-top: -100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container .card {
+        max-width: 250px;
+        margin: 15px 0;
+    }
+
+    .container .card .image {
+        max-width: 200px;
+    }
+    .reg_img{
+    gap: 20px;
+    /* width:150px; */
+    }
+    .south_places{
+        margin-top: -150px;
+    }
+}
+@media (max-width: 320px) {
+            #si {
+                font-size: 40px;   
+                padding-bottom: 120px;
+            }
+            #explore {
+                font-size: 24px;
+            }
+
+            .reg_beach {
+                font-size: 25px;
+            }
+
+            .reg_beach_matter {
+                font-size: 18px;
+            }
+
+            .container .card {
+                max-width: 250px;
+                margin: 20px 0;
+                font-size: 14px;
+            }
+            .container .card .image {
+                margin-left: -10px;
+    }
+            .south_places {
+                margin-top: -200px;
+                /* margin-left: 52px; */
+            }
+        }
+video {
+    width: 100%;
+    height: auto;
+    z-index: -1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cover
+{
+    display: flex;
+    justify-content: center;
+}
+.booknow
+{   
+    width:180px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( circle 918px at 13.1% 25.5%,  rgba(249,107,107,1) 0%, rgba(247,231,172,1) 48.9%, rgba(173,247,172,1) 90% );
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.booknow:hover
+{
+    color: white;
+}
+.booknow::before{
+    position: absolute;
+    content: "";
+    width:300px;
+    height:100px;
+    background-image: linear-gradient( 109.6deg,  rgba(112,246,255,0.33) 11.2%, rgba(221,108,241,0.26) 42%, rgba(229,106,253,0.71) 71.5%, rgba(123,183,253,1) 100.2% );
+    left:-300px;
+    border-radius: 50px;
+    transition: all 1s;
+    z-index: -1;
+}
+.booknow:hover::before{
+    left:0;
+}
+a{
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <div class="south_parent">
+        <div class="south_header">
+            <div class="south_heading">
+                <video id="myVideo" autoplay loop muted>
+                    <source src="../Videos/video.mp4" type="video/mp4">
+                </video>
+                <h2 id="explore">Explore</h2>
+                <h1 id="si">North India</h1>
+            </div>
+        </div>
+        <div class="south_places">
+            <div class="place">
+                <h1 class="reg_beach">NORTH INDIA</h1>
+                <div class="reg_beach_matter">
+                    North India! A destination pulsating with extraordinary attractions. Endowed with sheer natural beauty and a rich cultural heritage, North India beckons you for a travel experience of a lifetime.From the historic, majestic, and celestial destinations such as Delhi, Himachal Pradesh, Jammu & Kashmir, Rajasthan, Punjab, Haryana, Uttar Pradesh, and Uttaranchal, to the fascinating attractions like world-famous Heritage sites, hill stations, adventure sports, scenic beauty, cruises, wildlife, and pilgrimage sites, North India has something for everyone.
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://uttarakhandtourism.gov.in/sites/default/files/2020-06/badrinath.jpg"/>
+                          </div>
+                          <div class = content>
+                            <h3>TEMPLES</h3>
+                            <p>North India is home to numerous ancient and revered temples, showcasing the region's rich cultural heritage.</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://images.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/08/19/Pictures/front-nainital-photo-altitude-govind-ballabh-pant_1703e90e-84ee-11e7-aa81-8a4dce36eef3.JPG"/>
+                            </div>
+                            <div class = content>
+                              <h3>WILD LIFE</h3>
+                              <p>North India is home to a diverse range of wildlife, including the majestic Bengal tiger.</p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://adventurefanatic.wordpress.com/wp-content/uploads/2023/06/100.jpg?w=1024"/>
+                            </div>
+                            <div class = content>
+                              <h3>ADVENTURES</h3>
+                              <p>North India offers a plethora of adventure activities, including paragliding in Bir, Himachal Pradesh.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+            <!-- <div class="place beach">
+                <h1 class="reg_beach">
+                    Unbelievable Beaches
+                </h1>
+                <div class="reg_beach_matter">
+                    South India boasts some of the most stunning and pristine beaches in the country. From the serene shores of Kerala to the vibrant coastlines of Goa and Tamil Nadu, South India's beaches offer a perfect blend of natural beauty, tranquility, and cultural charm, making them ideal destinations for beach lovers and adventure seekers.
+                </div>
+                <div class="reg_img">
+                    <img src="https://media.istockphoto.com/id/1157048446/photo/aerial-shot-of-the-beach-from-above-showing-sea-beach-mountain-and-a-coconut-plantation-goa.jpg?s=612x612&w=0&k=20&c=BE0ZCnKZj8xi9Zgx5meO77k-o8v8EPT9TwlsPvY3TMc=" alt="">
+                    <img src="https://st.depositphotos.com/1428139/4337/i/450/depositphotos_43376209-stock-photo-fisherman-hut-in-the-village.jpg" alt="">
+
+            </div> -->
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Stunning Hill Stations
+                </h1>
+                <div class="reg_beach_matter">
+                    Abundant hill stations in North India spread all across the region that makes for a tranquil and picturesque destination for tourists. Kashmir has some of the most beautiful hill stations in India which include Pahalgam, Gulmarg, Srinagar, and Sonmarg. In Himachal Pradesh, tourists can be spoilt for choice with these fantastic hill stations in North India which include Shimla, Manali, and Dalhousie. Mussoorie and Nainital are among the most popular hill stations in North India. Almora and McLeodganj are among the lesser crowded hill stations in North India.
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://static.toiimg.com/photo/msid-102383896,width-96,height-65.cms"/>
+                          </div>
+                          <div class = content>
+                            <h3>Shimla</h3>
+                            <p>Shimla is a beautiful mountain resort in the Himalayas that has attracted travelers for years with its ageless.</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://www.honeymoonpackagesmanali.org/uploads/8/2/6/1/8261259/p179.png"/>
+                            </div>
+                            <div class = content>
+                              <h3>Manali</h3>
+                              <p>Manali is a breathtakingly beautiful hill station in the Indian state of nestled in the lap of the Himalayas.</p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://www.shutterstock.com/image-photo/city-dharamsala-india-600nw-1995261836.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Dharamshala</h3>
+                              <p>Dharamshala is a scenic hill station in the Indian state of Himachal Pradesh, nestled in the altitude of 1,475 meters above sea level.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Powerfull Temples
+                </h1>
+                <div class="reg_beach_matter">
+                    Temples in North India! The region is home to some of the most revered and awe-inspiring temples in the country. Here are some of the most famous and sacred temples in North India:
+                    Kashi Vishwanath Temple, Varanasi, Uttar Pradesh.
+                    Amarnath Cave Temple, Jammu and Kashmir.
+                    Vaishno Devi Temple, Jammu and Kashmir.
+                    Golden Temple, Amritsar, Punjab.
+                    Kedarnath Temple, Uttarakhand.
+                    Badrinath Temple, Uttarakhand.
+                </div>
+                <div class="reg_img">
+                    <img src="https://static.india.com/wp-content/uploads/2023/05/Kedarnath-1.jpg" alt="">
+                    <img src="https://cdn.britannica.com/65/251965-050-483D1D86/vishwanath-holy-temple-vananasi-hindu-uttar-pradesh-india.jpg" alt="">
+
+                </div>
+            </div>
+
+            <div class="place beach">
+                <h1 class="reg_beach">
+                    Wild Wonders Await: North India's Untamed Beauty
+                </h1>
+                <div class="reg_beach_matter">
+                    Wild wonders in North India! The region is home to some of the most incredible and diverse wildlife sanctuaries and national parks in the country. Here are some of the most famous and awe-inspiring wild wonders in North India:
+                    Ranthambore National Park, Rajasthan.
+                    Corbett National Park, Uttarakhand.
+                    Bharatpur National Park, Rajasthan.
+                    Dudhwa National Park, Uttar Pradesh.
+                    Great Himalayan National Park, Himachal Pradesh.
+                    Nainital Zoo, Uttarakhand
+                </div>
+                <div class="reg_img">
+                    <div class = container>
+                        <div class = card>
+                          <div class = image>
+                            <img href = "#" src ="https://www.ranthamborenationalpark.com/wp-content/uploads/2020/05/1-b.jpg"/>
+                          </div>
+                          <div class = content>
+                            <h3>Ranthambore National Park</h3>
+                            <p>Ranthambore National Park is one of the largest national parks situated in Rajasthan, India. .</p>
+                          </div>
+                        </div>   
+                        <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://media-cdn.tripadvisor.com/media/photo-s/12/a0/30/fa/nainital-zoo.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Nainital Zoo</h3>
+                              <p>The Nainital Zoo, officially known as “G. B. Pant High Altitude Zoo, Nainital”, is situated in Nainital City, Uttarakhand. </p>
+                            </div>
+                          </div>   
+                          <div class = card>
+                            <div class = image>
+                              <img href = "#" src ="https://www.toptourguide.com/images/himalayan-national-park-image1.jpg"/>
+                            </div>
+                            <div class = content>
+                              <h3>Great Himalayan National Park</h3>
+                              <p>The Great Himalayan National Park Conservation Area is located in the western part of the Himalayan Mountains.</p>
+                            </div>
+                          </div>   
+                           
+                      </div>
+                </div>
+            </div>
+            <div class="cover">
+                <a href="Booking_page.html"><div class="booknow">Book Your Trip</div></a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

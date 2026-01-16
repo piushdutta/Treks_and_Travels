@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Treks and Travel</title>
+    <link rel="icon" type="image/x-icon" href="./images/Logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom In Down Animation</title>
+    <style>
+        @keyframes zoomInDown {
+            0% { transform: scale(0.5) translateY(-100px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            /* background-color: #1a1a1a;  */
+        }
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/Index_page_image2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(1px);
+            z-index: -1; 
+        }
+        .content {
+            position: relative;
+            z-index: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+        }
+        .zoom-in-down-text {
+            display: inline-block;
+            font-size: 4em;
+            font-weight: bold;
+            opacity: 0;
+            animation: zoomInDown 1s ease-in-out forwards;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .slogan {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: 300;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(to right, #74b7ff, #3a8dff);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background: linear-gradient(to right, #3a8dff, #74b7ff);
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content">
+        <img src="./images/Logo.png" alt="Treks and Travels Logo" class="logo">
+        <div class="zoom-in-down-text">TREKS AND TRAVELS</div>
+        <div class="slogan">Explore, experience, and elevate your spirit.<br>Your next adventure starts here.</div>
+        <a href="./HTML/Sign-up_page.html"><button>Visit Now</button></a>
+    </div>
+</body>
+</html>

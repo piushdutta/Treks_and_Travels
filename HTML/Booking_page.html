@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treks and Travel</title>
+    <link rel="icon" type="image/x-icon" href="../images/Logo.png">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    
+}
+
+.booking-form {
+	width: 70%;
+
+    margin-top: 20px;
+    padding: 2rem;
+    backdrop-filter: blur( 30px );
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+
+h1 {
+    margin-top: 0;
+    color: maroon;
+    font-size: 38px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: maroon;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(62, 2, 2);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: rgb(137, 20, 20);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120vh;
+    width: 100%;
+    object-fit: cover;
+    z-index:-100;
+  }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+	</style>
+</head>
+<body>
+    <main>
+        <video id="myVideo" autoplay loop muted>
+            <source src="https://cdn.pixabay.com/video/2016/07/23/3966-175963620_large.mp4" type="video/mp4">
+          </video>
+        <section class="booking-form">
+            
+            <h1>Booking Details</h1>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" name="destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+                </div>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </section>
+        
+        <div id="invoiceModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Invoice Summary</h2>
+                <div id="invoiceDetails"></div>
+                <button id="downloadBtn">Download Invoice</button>
+            </div>
+        </div>
+    </main>
+    <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js">
+    </script>
+    <script>
+document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const destination = document.getElementById('destination').value;
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const guests = document.getElementById('guests').value;
+    if (checkin>= checkout) {
+        alert('Check-in date must be before the check-out date.');
+        return; 
+    }
+    const invoiceDetails = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Destination:</strong> ${destination}</p>
+        <p><strong>Check-in:</strong> ${checkin}</p>
+        <p><strong>Check-out:</strong> ${checkout}</p>
+        <p><strong>Guests:</strong> ${guests}</p>
+        <p><strong>Total Price:</strong> Rs.${guests * 15000} (Estimated)</p>
+    `;
+
+    const invoiceText = `
+    <div style="display:flex;gap:50px;margin-bottom:30px;">
+        <img src="../images/cropped_image.png" alt="image" style="height: 100px; width: 100px;">
+        <h1 style="font-size: 36PX; color: rgb(67, 4, 4);margin-top:30px;">TREKS AND TRAVELS</h1>
+        </div>
+        <h1>Invoice</h1>
+        
+        <table style="border: 1px solid black; border-collapse: collapse; width: 100%; font-family: Arial, sans-serif;">
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Name:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${name}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Email:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${email}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Destination:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${destination}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Check-In Date:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${checkin}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Check-Out Date:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${checkout}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Guests:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${guests}</td>
+                </tr>
+                <tr>
+                    <td style="background-color: #f5f5dc; padding: 30px; border: 1px solid black; font-weight: bold;">Total Price:</td>
+                    <td style="background-color: #4682b4; color: white; padding: 30px; border: 1px solid black;">${guests * 15000}</td>
+                </tr>
+        </table>
+        <br><br><br>
+        <center><h1>Happy Journey</h1></center>
+
+    `;
+
+    document.getElementById('invoiceDetails').innerHTML = invoiceDetails;
+
+    const modal = document.getElementById('invoiceModal');
+    const span = document.getElementsByClassName('close')[0];
+
+    modal.style.display = 'block';
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    document.getElementById('downloadBtn').onclick = function() {
+                const filename = 'table_data.pdf';
+                const opt = {
+            margin: 1,
+            filename: 'invoice.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(invoiceText).save();
+        modal.style.display = 'none';
+    };
+});
+	</script>
+</body>
+</html>
